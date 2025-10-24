@@ -98,3 +98,105 @@
 </body>
 
 </html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Presentation Slides</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            height: 100vh;
+            background: #000000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+
+        iframe {
+            width: 100%;
+            height: 90%;
+            border: none;
+            border-radius: 0px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+            background: #fff;
+        }
+
+        .controls {
+            margin-top: 20px;
+            display: flex;
+            gap: 20px;
+        }
+
+        button {
+            background-color: #ff6600;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #e65c00;
+        }
+
+        .page-info {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <iframe id="slideFrame" src="page_1.html"></iframe>
+
+    <div class="controls">
+        <button id="prevBtn">⬅ Prev</button>
+        <button id="nextBtn">Next ➡</button>
+    </div>
+
+    <div class="page-info" id="pageInfo">Page 1 of 10</div>
+
+    <script>
+        const totalPages = 15;
+        let currentPage = 1;
+
+        const iframe = document.getElementById("slideFrame");
+        const prevBtn = document.getElementById("prevBtn");
+        const nextBtn = document.getElementById("nextBtn");
+        const pageInfo = document.getElementById("pageInfo");
+
+        function updateSlide() {
+            iframe.src = `page_${currentPage}.html`;
+            pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
+        }
+
+        prevBtn.addEventListener("click", () => {
+            if (currentPage > 1) {
+                currentPage--;
+                updateSlide();
+            }
+        });
+
+        nextBtn.addEventListener("click", () => {
+            if (currentPage < totalPages) {
+                currentPage++;
+                updateSlide();
+            }
+        });
+    </script>
+</body>
+
+</html> -->
