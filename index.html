@@ -13,7 +13,7 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
-            background: #000000;
+            background: #000;
             color: #fff;
             font-family: Arial, sans-serif;
         }
@@ -22,8 +22,6 @@
             width: 100%;
             height: 90%;
             border: none;
-            border-radius: 0px;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
             background: #fff;
             opacity: 1;
             transition: opacity 0.6s ease-in-out;
@@ -80,14 +78,21 @@
         const nextBtn = document.getElementById("nextBtn");
         const pageInfo = document.getElementById("pageInfo");
 
-        function updateSlide(direction = "next") {
+        // Smooth fade transition (out → in)
+        function updateSlide() {
+            // Fade out
             iframe.classList.add("fade-out");
 
+            // Wait for fade-out to finish before changing the slide
             setTimeout(() => {
                 iframe.src = `page_${currentPage}.html`;
                 pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
+            }, 600); // fade-out duration
+
+            // Once the new slide loads, fade back in
+            iframe.addEventListener("load", () => {
                 iframe.classList.remove("fade-out");
-            }, 600); // matches transition duration
+            }, { once: true });
         }
 
         function nextSlide() {
@@ -96,7 +101,7 @@
             } else {
                 currentPage = 1; // loop to first slide
             }
-            updateSlide("next");
+            updateSlide();
         }
 
         function prevSlide() {
@@ -105,10 +110,10 @@
             } else {
                 currentPage = totalPages; // loop to last slide
             }
-            updateSlide("prev");
+            updateSlide();
         }
 
-        // Button events
+        // Button navigation
         nextBtn.addEventListener("click", nextSlide);
         prevBtn.addEventListener("click", prevSlide);
 
