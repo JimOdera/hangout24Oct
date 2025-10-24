@@ -12,7 +12,6 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100%;
             height: 100vh;
             background: #000000;
             color: #fff;
@@ -26,6 +25,12 @@
             border-radius: 0px;
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
             background: #fff;
+            opacity: 1;
+            transition: opacity 0.6s ease-in-out;
+        }
+
+        .fade-out {
+            opacity: 0;
         }
 
         .controls {
@@ -70,29 +75,47 @@
     <script>
         const totalPages = 15;
         let currentPage = 1;
-
         const iframe = document.getElementById("slideFrame");
         const prevBtn = document.getElementById("prevBtn");
         const nextBtn = document.getElementById("nextBtn");
         const pageInfo = document.getElementById("pageInfo");
 
-        function updateSlide() {
-            iframe.src = `page_${currentPage}.html`;
-            pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
+        function updateSlide(direction = "next") {
+            iframe.classList.add("fade-out");
+
+            setTimeout(() => {
+                iframe.src = `page_${currentPage}.html`;
+                pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
+                iframe.classList.remove("fade-out");
+            }, 600); // matches transition duration
         }
 
-        prevBtn.addEventListener("click", () => {
-            if (currentPage > 1) {
-                currentPage--;
-                updateSlide();
-            }
-        });
-
-        nextBtn.addEventListener("click", () => {
+        function nextSlide() {
             if (currentPage < totalPages) {
                 currentPage++;
-                updateSlide();
+            } else {
+                currentPage = 1; // loop to first slide
             }
+            updateSlide("next");
+        }
+
+        function prevSlide() {
+            if (currentPage > 1) {
+                currentPage--;
+            } else {
+                currentPage = totalPages; // loop to last slide
+            }
+            updateSlide("prev");
+        }
+
+        // Button events
+        nextBtn.addEventListener("click", nextSlide);
+        prevBtn.addEventListener("click", prevSlide);
+
+        // Keyboard navigation
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "ArrowRight") nextSlide();
+            if (e.key === "ArrowLeft") prevSlide();
         });
     </script>
 </body>
