@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Implementation Roadmap</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        .slide {
+            width: 100%;
+            height: 100vh;
+        }
+
+        .circuit-pattern {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.07;
+            z-index: 0;
+        }
+
+        .phase-card {
+            transition: all 0.3s ease;
+        }
+
+        .phase-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+
+        .timeline-line {
+            stroke: url(#gradient);
+            stroke-width: 4;
+            stroke-linecap: round;
+        }
+
+        .timeline-dot {
+            fill: url(#gradient);
+        }
+
+        html {
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slide bg-gradient-to-br from-gray-900 to-gray-800 text-white relative overflow-hidden"
+        style=" overflow: hidden;">
+        <!-- Circuit pattern background -->
+        <div class="circuit-pattern">
+            <svg height="100%" width="100%" xmlns="http://www.w3.org/2000/svg">
+                <pattern height="100" id="circuit" patternUnits="userSpaceOnUse" width="100">
+                    <path d="M10,10 L90,10 M10,50 L90,50 M10,90 L90,90" fill="none" stroke="#40E0D0" stroke-width="1">
+                    </path>
+                    <path d="M10,10 L10,90 M50,10 L50,90 M90,10 L90,90" fill="none" stroke="#40E0D0" stroke-width="1">
+                    </path>
+                    <circle cx="50" cy="50" fill="#FFA500" r="3"></circle>
+                    <circle cx="10" cy="10" fill="#40E0D0" r="3"></circle>
+                    <circle cx="90" cy="10" fill="#40E0D0" r="3"></circle>
+                    <circle cx="10" cy="90" fill="#40E0D0" r="3"></circle>
+                    <circle cx="90" cy="90" fill="#40E0D0" r="3"></circle>
+                </pattern>
+                <rect fill="url(#circuit)" height="100%" width="100%"></rect>
+            </svg>
+        </div>
+        <!-- Header -->
+        <div class="relative z-10 pt-12 px-20">
+            <h1 class="text-5xl font-bold mb-3 text-white">Implementation Roadmap</h1>
+            <div class="w-32 h-1 bg-gradient-to-r from-teal-400 to-teal-600 mb-6"></div>
+            <p class="text-xl text-gray-300 mb-8">A structured, phased approach to AI integration (7-12 months)</p>
+        </div>
+        <!-- Timeline Visualization -->
+        <div class="relative z-10 px-20 mb-4">
+            <svg height="60" id="timeline" width="1000"></svg>
+        </div>
+        <!-- Phase Cards -->
+        <div class="relative z-10 flex justify-between px-20 mt-2">
+            <!-- Phase 1 -->
+            <div class="phase-card bg-gray-800 bg-opacity-70 border-l-4 border-teal-400 rounded-lg p-5 w-64">
+                <div class="flex items-center mb-3">
+                    <div class="w-10 h-10 rounded-full bg-teal-500 flex items-center justify-center mr-3">
+                        <i class="fas fa-layer-group text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-teal-400">Phase 1: Foundation</h3>
+                        <p class="text-sm text-gray-400">Months 1-3</p>
+                    </div>
+                </div>
+                <ul class="text-sm space-y-2">
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-teal-400 mt-1 mr-2"></i>
+                        <span>Audit data infrastructure</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-teal-400 mt-1 mr-2"></i>
+                        <span>Identify high-impact use cases</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-teal-400 mt-1 mr-2"></i>
+                        <span>Select AI tools</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-teal-400 mt-1 mr-2"></i>
+                        <span>Train team on AI fundamentals</span>
+                    </li>
+                </ul>
+            </div>
+            <!-- Phase 2 -->
+            <div class="phase-card bg-gray-800 bg-opacity-70 border-l-4 border-orange-400 rounded-lg p-5 w-64">
+                <div class="flex items-center mb-3">
+                    <div class="w-10 h-10 rounded-full bg-orange-500 flex items-center justify-center mr-3">
+                        <i class="fas fa-vial text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-orange-400">Phase 2: Pilot</h3>
+                        <p class="text-sm text-gray-400">Months 4-6</p>
+                    </div>
+                </div>
+                <ul class="text-sm space-y-2">
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-orange-400 mt-1 mr-2"></i>
+                        <span>Deploy AI in limited campaigns</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-orange-400 mt-1 mr-2"></i>
+                        <span>Measure performance vs. traditional approaches</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-orange-400 mt-1 mr-2"></i>
+                        <span>Gather team feedback</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-orange-400 mt-1 mr-2"></i>
+                        <span>Document best practices</span>
+                    </li>
+                </ul>
+            </div>
+            <!-- Phase 3 -->
+            <div class="phase-card bg-gray-800 bg-opacity-70 border-l-4 border-purple-500 rounded-lg p-5 w-64">
+                <div class="flex items-center mb-3">
+                    <div class="w-10 h-10 rounded-full bg-purple-600 flex items-center justify-center mr-3">
+                        <i class="fas fa-expand-arrows-alt text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-purple-500">Phase 3: Scale</h3>
+                        <p class="text-sm text-gray-400">Months 7-12</p>
+                    </div>
+                </div>
+                <ul class="text-sm space-y-2">
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-purple-500 mt-1 mr-2"></i>
+                        <span>Expand AI usage across campaigns</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-purple-500 mt-1 mr-2"></i>
+                        <span>Integrate into standard workflows</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-purple-500 mt-1 mr-2"></i>
+                        <span>Develop AI-first planning processes</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-purple-500 mt-1 mr-2"></i>
+                        <span>Build internal expertise</span>
+                    </li>
+                </ul>
+            </div>
+            <!-- Phase 4 -->
+            <div class="phase-card bg-gray-800 bg-opacity-70 border-l-4 border-yellow-400 rounded-lg p-5 w-64">
+                <div class="flex items-center mb-3">
+                    <div class="w-10 h-10 rounded-full bg-yellow-500 flex items-center justify-center mr-3">
+                        <i class="fas fa-lightbulb text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-yellow-400">Phase 4: Innovation</h3>
+                        <p class="text-sm text-gray-400">Ongoing</p>
+                    </div>
+                </div>
+                <ul class="text-sm space-y-2">
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-yellow-400 mt-1 mr-2"></i>
+                        <span>Explore emerging AI capabilities</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-yellow-400 mt-1 mr-2"></i>
+                        <span>Develop proprietary AI applications</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-yellow-400 mt-1 mr-2"></i>
+                        <span>Share learnings across organization</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-yellow-400 mt-1 mr-2"></i>
+                        <span>Stay ahead of industry curve</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Bottom accent -->
+        <div class="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r from-teal-400 via-purple-700 to-yellow-500">
+        </div>
+    </div>
+    <script>
+        // D3.js timeline visualization
+        document.addEventListener('DOMContentLoaded', function () {
+            const svg = d3.select("#timeline");
+            const width = +svg.attr("width");
+            const height = +svg.attr("height");
+
+            // Define gradient
+            const defs = svg.append("defs");
+            const gradient = defs.append("linearGradient")
+                .attr("id", "gradient")
+                .attr("x1", "0%")
+                .attr("y1", "0%")
+                .attr("x2", "100%")
+                .attr("y2", "0%");
+
+            gradient.append("stop")
+                .attr("offset", "0%")
+                .attr("stop-color", "#40E0D0");
+
+            gradient.append("stop")
+                .attr("offset", "50%")
+                .attr("stop-color", "#FFA500");
+
+            gradient.append("stop")
+                .attr("offset", "100%")
+                .attr("stop-color", "#FFFF00");
+
+            // Draw timeline
+            svg.append("line")
+                .attr("x1", 50)
+                .attr("y1", height / 2)
+                .attr("x2", width - 50)
+                .attr("y2", height / 2)
+                .attr("class", "timeline-line");
+
+            // Add phase points
+            const phases = [
+                { x: 150, label: "Foundation" },
+                { x: 350, label: "Pilot" },
+                { x: 550, label: "Scale" },
+                { x: 750, label: "Innovation" }
+            ];
+
+            // Add dots
+            svg.selectAll(".timeline-dot")
+                .data(phases)
+                .enter()
+                .append("circle")
+                .attr("cx", d => d.x)
+                .attr("cy", height / 2)
+                .attr("r", 8)
+                .attr("class", "timeline-dot");
+
+            // Add phase labels
+            svg.selectAll(".phase-label")
+                .data(phases)
+                .enter()
+                .append("text")
+                .attr("x", d => d.x)
+                .attr("y", height / 2 - 20)
+                .attr("text-anchor", "middle")
+                .attr("fill", "#FFFFFF")
+                .attr("font-size", "12px")
+                .text(d => d.label);
+
+            // Add time frame labels
+            svg.append("text")
+                .attr("x", 150)
+                .attr("y", height / 2 + 25)
+                .attr("text-anchor", "middle")
+                .attr("fill", "#40E0D0")
+                .attr("font-size", "12px")
+                .text("Months 1-3");
+
+            svg.append("text")
+                .attr("x", 350)
+                .attr("y", height / 2 + 25)
+                .attr("text-anchor", "middle")
+                .attr("fill", "#FFA500")
+                .attr("font-size", "12px")
+                .text("Months 4-6");
+
+            svg.append("text")
+                .attr("x", 550)
+                .attr("y", height / 2 + 25)
+                .attr("text-anchor", "middle")
+                .attr("fill", "#9061F9")
+                .attr("font-size", "12px")
+                .text("Months 7-12");
+
+            svg.append("text")
+                .attr("x", 750)
+                .attr("y", height / 2 + 25)
+                .attr("text-anchor", "middle")
+                .attr("fill", "#FFFF00")
+                .attr("font-size", "12px")
+                .text("Ongoing");
+        });
+    </script>
+
+</body>
+
+</html>

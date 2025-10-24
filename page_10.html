@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Overcoming Common Challenges</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        .slide {
+            width: 100%;
+            height: 100vh;
+        }
+
+        .circuit-pattern {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.07;
+            z-index: 0;
+        }
+
+        .challenge-card {
+            transition: transform 0.3s ease;
+        }
+
+        .challenge-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .vs-badge {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 18px;
+            z-index: 10;
+        }
+
+        html {
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slide bg-gradient-to-br from-gray-900 to-gray-800 text-white relative overflow-hidden"
+        style=" overflow: hidden;">
+        <!-- Circuit pattern background -->
+        <div class="circuit-pattern">
+            <svg height="100%" width="100%" xmlns="http://www.w3.org/2000/svg">
+                <pattern height="100" id="circuit" patternUnits="userSpaceOnUse" width="100">
+                    <path d="M10,10 L90,10 M10,50 L90,50 M10,90 L90,90" fill="none" stroke="#40E0D0" stroke-width="1">
+                    </path>
+                    <path d="M10,10 L10,90 M50,10 L50,90 M90,10 L90,90" fill="none" stroke="#40E0D0" stroke-width="1">
+                    </path>
+                    <circle cx="50" cy="50" fill="#FFA500" r="3"></circle>
+                    <circle cx="10" cy="10" fill="#40E0D0" r="3"></circle>
+                    <circle cx="90" cy="10" fill="#40E0D0" r="3"></circle>
+                    <circle cx="10" cy="90" fill="#40E0D0" r="3"></circle>
+                    <circle cx="90" cy="90" fill="#40E0D0" r="3"></circle>
+                </pattern>
+                <rect fill="url(#circuit)" height="100%" width="100%"></rect>
+            </svg>
+        </div>
+        <!-- Header -->
+        <div class="relative z-10 pt-12 px-20">
+            <h1 class="text-5xl font-bold mb-3 text-white">Overcoming Common Challenges</h1>
+            <div class="w-32 h-1 bg-gradient-to-r from-teal-400 to-teal-600 mb-6"></div>
+            <p class="text-xl text-gray-300 mb-8">Addressing misconceptions about AI integration in media planning</p>
+        </div>
+        <!-- Main Content -->
+        <div class="relative z-10 px-20 grid grid-cols-2 gap-6">
+            <!-- Challenge 1 -->
+            <div class="challenge-card bg-gray-800 bg-opacity-70 rounded-lg p-6 flex items-center">
+                <div class="w-16 h-16 rounded-full bg-red-500 flex items-center justify-center mr-4 flex-shrink-0">
+                    <i class="fas fa-user-minus text-2xl"></i>
+                </div>
+                <div class="flex-grow">
+                    <h3 class="text-xl font-bold text-red-400 mb-2">Challenge</h3>
+                    <p class="text-lg">&#34;AI will replace my job&#34;</p>
+                </div>
+                <div class="vs-badge bg-gradient-to-r from-teal-500 to-teal-700 mx-4">VS</div>
+                <div class="flex-grow">
+                    <h3 class="text-xl font-bold text-teal-400 mb-2">Reality</h3>
+                    <p class="text-lg">AI amplifies strategic roles by eliminating tedious tasks. Demand for skilled
+                        strategists is increasing.</p>
+                </div>
+            </div>
+            <!-- Challenge 2 -->
+            <div class="challenge-card bg-gray-800 bg-opacity-70 rounded-lg p-6 flex items-center">
+                <div class="w-16 h-16 rounded-full bg-orange-500 flex items-center justify-center mr-4 flex-shrink-0">
+                    <i class="fas fa-database text-2xl"></i>
+                </div>
+                <div class="flex-grow">
+                    <h3 class="text-xl font-bold text-orange-400 mb-2">Challenge</h3>
+                    <p class="text-lg">&#34;Our data isn&#39;t good enough&#34;</p>
+                </div>
+                <div class="vs-badge bg-gradient-to-r from-teal-500 to-teal-700 mx-4">VS</div>
+                <div class="flex-grow">
+                    <h3 class="text-xl font-bold text-teal-400 mb-2">Reality</h3>
+                    <p class="text-lg">Start with the data you have. AI can help identify and fill gaps over time.
+                        Perfect data isn&#39;t required.</p>
+                </div>
+            </div>
+            <!-- Challenge 3 -->
+            <div class="challenge-card bg-gray-800 bg-opacity-70 rounded-lg p-6 flex items-center">
+                <div class="w-16 h-16 rounded-full bg-yellow-600 flex items-center justify-center mr-4 flex-shrink-0">
+                    <i class="fas fa-money-bill-wave text-2xl"></i>
+                </div>
+                <div class="flex-grow">
+                    <h3 class="text-xl font-bold text-yellow-500 mb-2">Challenge</h3>
+                    <p class="text-lg">&#34;AI tools are too expensive&#34;</p>
+                </div>
+                <div class="vs-badge bg-gradient-to-r from-teal-500 to-teal-700 mx-4">VS</div>
+                <div class="flex-grow">
+                    <h3 class="text-xl font-bold text-teal-400 mb-2">Reality</h3>
+                    <p class="text-lg">Many powerful AI tools have accessible entry points. The cost of NOT using AI is
+                        higher - lost efficiency.</p>
+                </div>
+            </div>
+            <!-- Challenge 4 -->
+            <div class="challenge-card bg-gray-800 bg-opacity-70 rounded-lg p-6 flex items-center">
+                <div class="w-16 h-16 rounded-full bg-purple-600 flex items-center justify-center mr-4 flex-shrink-0">
+                    <i class="fas fa-lightbulb text-2xl"></i>
+                </div>
+                <div class="flex-grow">
+                    <h3 class="text-xl font-bold text-purple-400 mb-2">Challenge</h3>
+                    <p class="text-lg">&#34;AI lacks creativity and strategy&#34;</p>
+                </div>
+                <div class="vs-badge bg-gradient-to-r from-teal-500 to-teal-700 mx-4">VS</div>
+                <div class="flex-grow">
+                    <h3 class="text-xl font-bold text-teal-400 mb-2">Reality</h3>
+                    <p class="text-lg">AI doesn&#39;t replace human creativity; it enhances it by handling analysis so
+                        humans can focus on strategic thinking.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Bottom accent -->
+        <div class="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r from-teal-400 via-purple-700 to-yellow-500">
+        </div>
+    </div>
+
+</body>
+
+</html>

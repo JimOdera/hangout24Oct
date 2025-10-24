@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>The Future: What&#39;s Coming</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        .slide {
+            width: 100%;
+            height: 100vh;
+        }
+
+        .circuit-pattern {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.07;
+            z-index: 0;
+        }
+
+        .timeline-container {
+            position: relative;
+            height: 80px;
+        }
+
+        .timeline-line {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(to right, #40E0D0, #FFA500, #FFFF00);
+            transform: translateY(-50%);
+        }
+
+        .timeline-point {
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+
+        .timeline-label {
+            position: absolute;
+            top: -40px;
+            transform: translateX(-50%);
+            font-weight: bold;
+        }
+
+        .timeline-content {
+            position: absolute;
+            top: 20px;
+            transform: translateX(-50%);
+            width: 300px;
+        }
+
+        .future-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-left: 4px solid;
+            transition: transform 0.3s ease;
+        }
+
+        .future-card:hover {
+            transform: translateY(-5px);
+        }
+
+        html {
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slide bg-gradient-to-br from-gray-900 to-gray-800 text-white relative overflow-hidden"
+        style=" overflow: hidden;">
+        <!-- Circuit pattern background -->
+        <div class="circuit-pattern">
+            <svg height="100%" width="100%" xmlns="http://www.w3.org/2000/svg">
+                <pattern height="100" id="circuit" patternUnits="userSpaceOnUse" width="100">
+                    <path d="M10,10 L90,10 M10,50 L90,50 M10,90 L90,90" fill="none" stroke="#40E0D0" stroke-width="1">
+                    </path>
+                    <path d="M10,10 L10,90 M50,10 L50,90 M90,10 L90,90" fill="none" stroke="#40E0D0" stroke-width="1">
+                    </path>
+                    <circle cx="50" cy="50" fill="#FFA500" r="3"></circle>
+                    <circle cx="10" cy="10" fill="#40E0D0" r="3"></circle>
+                    <circle cx="90" cy="10" fill="#40E0D0" r="3"></circle>
+                    <circle cx="10" cy="90" fill="#40E0D0" r="3"></circle>
+                    <circle cx="90" cy="90" fill="#40E0D0" r="3"></circle>
+                </pattern>
+                <rect fill="url(#circuit)" height="100%" width="100%"></rect>
+            </svg>
+        </div>
+        <!-- Header -->
+        <div class="relative z-10 pt-16 px-20">
+            <h1 class="text-5xl font-bold mb-3 text-white">The Future: What&#39;s Coming</h1>
+            <div class="w-32 h-1 bg-gradient-to-r from-teal-400 to-teal-600 mb-10"></div>
+        </div>
+        <!-- Timeline Visualization -->
+        <div class="relative z-10 px-20 mb-8">
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
+                <!-- Timeline Points -->
+                <div class="timeline-point bg-teal-400" style="left: 20%"></div>
+                <div class="timeline-label text-teal-400" style="left: 20%">Near-Term</div>
+                <div class="timeline-content" style="left: 20%">
+                    <div class="text-sm text-gray-300">1-2 years</div>
+                </div>
+                <div class="timeline-point bg-purple-500" style="left: 50%"></div>
+                <div class="timeline-label text-purple-500" style="left: 50%">Medium-Term</div>
+                <div class="timeline-content" style="left: 50%">
+                    <div class="text-sm text-gray-300">3-5 years</div>
+                </div>
+                <div class="timeline-point bg-yellow-400" style="left: 80%"></div>
+                <div class="timeline-label text-yellow-400" style="left: 80%">Long-Term</div>
+                <div class="timeline-content" style="left: 80%">
+                    <div class="text-sm text-gray-300">5+ years</div>
+                </div>
+            </div>
+        </div>
+        <!-- Future Developments Content -->
+        <div class="relative z-10 flex px-20 space-x-6">
+            <!-- Near-Term -->
+            <div class="w-1/3">
+                <div class="future-card border-teal-400 p-4 h-full">
+                    <div class="flex items-center mb-3">
+                        <div class="w-10 h-10 rounded-full bg-teal-500 flex items-center justify-center mr-3">
+                            <i class="fas fa-robot text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-teal-400">Near-Term (1-2 years)</h3>
+                    </div>
+                    <ul class="space-y-3 pl-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-teal-400 mt-1 mr-2"></i>
+                            <span>Fully automated media buying across all channels</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-teal-400 mt-1 mr-2"></i>
+                            <span>Real-time creative optimization becoming standard</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-teal-400 mt-1 mr-2"></i>
+                            <span>AI-generated campaign strategies requiring only human approval</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-teal-400 mt-1 mr-2"></i>
+                            <span>Predictive consumer behavior modeling at individual level</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Medium-Term -->
+            <div class="w-1/3">
+                <div class="future-card border-purple-500 p-4 h-full">
+                    <div class="flex items-center mb-3">
+                        <div class="w-10 h-10 rounded-full bg-purple-600 flex items-center justify-center mr-3">
+                            <i class="fas fa-users-cog text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-purple-500">Medium-Term (3-5 years)</h3>
+                    </div>
+                    <ul class="space-y-3 pl-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-purple-500 mt-1 mr-2"></i>
+                            <span>AI-human collaborative strategy sessions</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-purple-500 mt-1 mr-2"></i>
+                            <span>Autonomous campaign management with strategic guardrails</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-purple-500 mt-1 mr-2"></i>
+                            <span>Integration of emerging channels (metaverse, spatial computing) into AI
+                                planning</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-purple-500 mt-1 mr-2"></i>
+                            <span>Hyper-personalization at population scale</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Long-Term -->
+            <div class="w-1/3">
+                <div class="future-card border-yellow-400 p-4 h-full">
+                    <div class="flex items-center mb-3">
+                        <div class="w-10 h-10 rounded-full bg-yellow-500 flex items-center justify-center mr-3">
+                            <i class="fas fa-lightbulb text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-yellow-400">Long-Term (5+ years)</h3>
+                    </div>
+                    <ul class="space-y-3 pl-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-yellow-400 mt-1 mr-2"></i>
+                            <span>AI strategy partners that learn organizational knowledge</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-yellow-400 mt-1 mr-2"></i>
+                            <span>Predictive market creation identifying needs before consumers realize them</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-yellow-400 mt-1 mr-2"></i>
+                            <span>Seamless integration across entire marketing ecosystem</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-yellow-400 mt-1 mr-2"></i>
+                            <span>Quantum computing enabling previously impossible optimization</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Bottom accent -->
+        <div class="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r from-teal-400 via-purple-700 to-yellow-500">
+        </div>
+    </div>
+
+</body>
+
+</html>

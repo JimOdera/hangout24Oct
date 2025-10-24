@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Call to Action</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        .slide {
+            width: 100%;
+            height: 100vh;
+        }
+
+        .circuit-pattern {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.07;
+            z-index: 0;
+        }
+
+        .action-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-left: 4px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .action-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .individual-card {
+            border-left-color: #40E0D0;
+        }
+
+        .organization-card {
+            border-left-color: #FFA500;
+        }
+
+        .industry-card {
+            border-left-color: #FFFF00;
+        }
+
+        .icon-circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        html {
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slide bg-gradient-to-br from-gray-900 to-gray-800 text-white relative overflow-hidden"
+        style=" overflow: hidden;">
+        <!-- Circuit pattern background -->
+        <div class="circuit-pattern">
+            <svg height="100%" width="100%" xmlns="http://www.w3.org/2000/svg">
+                <pattern height="100" id="circuit" patternUnits="userSpaceOnUse" width="100">
+                    <path d="M10,10 L90,10 M10,50 L90,50 M10,90 L90,90" fill="none" stroke="#40E0D0" stroke-width="1">
+                    </path>
+                    <path d="M10,10 L10,90 M50,10 L50,90 M90,10 L90,90" fill="none" stroke="#40E0D0" stroke-width="1">
+                    </path>
+                    <circle cx="50" cy="50" fill="#FFA500" r="3"></circle>
+                    <circle cx="10" cy="10" fill="#40E0D0" r="3"></circle>
+                    <circle cx="90" cy="10" fill="#40E0D0" r="3"></circle>
+                    <circle cx="10" cy="90" fill="#40E0D0" r="3"></circle>
+                    <circle cx="90" cy="90" fill="#40E0D0" r="3"></circle>
+                </pattern>
+                <rect fill="url(#circuit)" height="100%" width="100%"></rect>
+            </svg>
+        </div>
+        <!-- Header -->
+        <div class="relative z-10 pt-12 px-20">
+            <h1 class="text-5xl font-bold mb-3 text-white">Call to Action</h1>
+            <div class="w-32 h-1 bg-gradient-to-r from-teal-400 to-teal-600 mb-6"></div>
+            <p class="text-xl text-gray-300 mb-8">Specific actions to leverage AI in media planning and strategy</p>
+        </div>
+        <!-- Main Content -->
+        <div class="relative z-10 px-20 grid grid-cols-3 gap-6">
+            <!-- Individual Strategists -->
+            <div class="flex flex-col">
+                <div class="flex items-center mb-4">
+                    <div class="icon-circle bg-teal-500 mr-3">
+                        <i class="fas fa-user text-2xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-semibold text-teal-400">For Individual Strategists</h2>
+                </div>
+                <div class="action-card individual-card p-4 mb-3">
+                    <div class="flex items-start">
+                        <i class="fas fa-laptop-code text-teal-400 mt-1 mr-3"></i>
+                        <p class="text-lg">Start experimenting with AI tools today</p>
+                    </div>
+                </div>
+                <div class="action-card individual-card p-4 mb-3">
+                    <div class="flex items-start">
+                        <i class="fas fa-brain text-teal-400 mt-1 mr-3"></i>
+                        <p class="text-lg">Develop uniquely human skills: creativity, empathy, strategic thinking</p>
+                    </div>
+                </div>
+                <div class="action-card individual-card p-4 mb-3">
+                    <div class="flex items-start">
+                        <i class="fas fa-rocket text-teal-400 mt-1 mr-3"></i>
+                        <p class="text-lg">Position yourself as an AI-amplified strategist</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Organizations -->
+            <div class="flex flex-col">
+                <div class="flex items-center mb-4">
+                    <div class="icon-circle bg-orange-500 mr-3">
+                        <i class="fas fa-building text-2xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-semibold text-orange-400">For Organizations</h2>
+                </div>
+                <div class="action-card organization-card p-4 mb-3">
+                    <div class="flex items-start">
+                        <i class="fas fa-server text-orange-400 mt-1 mr-3"></i>
+                        <p class="text-lg">Invest in AI infrastructure aligned with strategic objectives</p>
+                    </div>
+                </div>
+                <div class="action-card organization-card p-4 mb-3">
+                    <div class="flex items-start">
+                        <i class="fas fa-graduation-cap text-orange-400 mt-1 mr-3"></i>
+                        <p class="text-lg">Create AI literacy programs for teams</p>
+                    </div>
+                </div>
+                <div class="action-card organization-card p-4 mb-3">
+                    <div class="flex items-start">
+                        <i class="fas fa-sync-alt text-orange-400 mt-1 mr-3"></i>
+                        <p class="text-lg">Redesign workflows to leverage AI capabilities</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Industry -->
+            <div class="flex flex-col">
+                <div class="flex items-center mb-4">
+                    <div class="icon-circle bg-yellow-500 mr-3">
+                        <i class="fas fa-globe text-2xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-semibold text-yellow-400">For the Industry</h2>
+                </div>
+                <div class="action-card industry-card p-4 mb-3">
+                    <div class="flex items-start">
+                        <i class="fas fa-balance-scale text-yellow-400 mt-1 mr-3"></i>
+                        <p class="text-lg">Establish ethical guidelines for AI use in media</p>
+                    </div>
+                </div>
+                <div class="action-card industry-card p-4 mb-3">
+                    <div class="flex items-start">
+                        <i class="fas fa-share-alt text-yellow-400 mt-1 mr-3"></i>
+                        <p class="text-lg">Share best practices openly to accelerate learning</p>
+                    </div>
+                </div>
+                <div class="action-card industry-card p-4 mb-3">
+                    <div class="flex items-start">
+                        <i class="fas fa-user-graduate text-yellow-400 mt-1 mr-3"></i>
+                        <p class="text-lg">Prepare workforce for an AI-amplified future</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Bottom accent -->
+        <div class="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r from-teal-400 via-purple-700 to-yellow-500">
+        </div>
+    </div>
+
+</body>
+
+</html>

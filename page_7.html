@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>The Amplification Framework</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        .slide {
+            width: 100%;
+            height: 100vh;
+        }
+
+        .circuit-pattern {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.07;
+            z-index: 0;
+        }
+
+        .strength-item {
+            transition: all 0.3s ease;
+        }
+
+        .strength-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .ai-gradient {
+            background: linear-gradient(135deg, #40E0D0 0%, #4B0082 100%);
+        }
+
+        .human-gradient {
+            background: linear-gradient(135deg, #FFA500 0%, #FFFF00 100%);
+        }
+
+        html {
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slide bg-gradient-to-br from-gray-900 to-gray-800 text-white relative overflow-hidden"
+        style=" overflow: hidden;">
+        <!-- Circuit pattern background -->
+        <div class="circuit-pattern">
+            <svg height="100%" width="100%" xmlns="http://www.w3.org/2000/svg">
+                <pattern height="100" id="circuit" patternUnits="userSpaceOnUse" width="100">
+                    <path d="M10,10 L90,10 M10,50 L90,50 M10,90 L90,90" fill="none" stroke="#40E0D0" stroke-width="1">
+                    </path>
+                    <path d="M10,10 L10,90 M50,10 L50,90 M90,10 L90,90" fill="none" stroke="#40E0D0" stroke-width="1">
+                    </path>
+                    <circle cx="50" cy="50" fill="#FFA500" r="3"></circle>
+                    <circle cx="10" cy="10" fill="#40E0D0" r="3"></circle>
+                    <circle cx="90" cy="10" fill="#40E0D0" r="3"></circle>
+                    <circle cx="10" cy="90" fill="#40E0D0" r="3"></circle>
+                    <circle cx="90" cy="90" fill="#40E0D0" r="3"></circle>
+                </pattern>
+                <rect fill="url(#circuit)" height="100%" width="100%"></rect>
+            </svg>
+        </div>
+        <!-- Header -->
+        <div class="relative z-10 pt-12 px-20">
+            <h1 class="text-5xl font-bold mb-3 text-white">The Amplification Framework</h1>
+            <div class="w-32 h-1 bg-gradient-to-r from-teal-400 to-teal-600 mb-6"></div>
+            <p class="text-xl text-gray-300 mb-8">AI as a force multiplier for human expertise</p>
+        </div>
+        <!-- Main Content: Two Columns -->
+        <div class="relative z-10 flex px-20 space-x-6">
+            <!-- AI Strengths Column -->
+            <div class="w-1/2 bg-gray-800 bg-opacity-70 rounded-xl p-6 border-t-4 border-teal-400">
+                <h2 class="text-2xl font-bold mb-4 flex items-center">
+                    <i class="fas fa-robot text-teal-400 mr-3"></i>
+                    Where AI Excels
+                </h2>
+                <div class="space-y-4">
+                    <div class="strength-item flex items-start">
+                        <div
+                            class="w-10 h-10 rounded-full ai-gradient flex items-center justify-center mr-4 flex-shrink-0">
+                            <i class="fas fa-bolt text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-teal-300">Speed</h3>
+                            <p class="text-gray-300">Processing millions of data points instantly</p>
+                        </div>
+                    </div>
+                    <div class="strength-item flex items-start">
+                        <div
+                            class="w-10 h-10 rounded-full ai-gradient flex items-center justify-center mr-4 flex-shrink-0">
+                            <i class="fas fa-expand-arrows-alt text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-teal-300">Scale</h3>
+                            <p class="text-gray-300">Analyzing thousands of scenarios simultaneously</p>
+                        </div>
+                    </div>
+                    <div class="strength-item flex items-start">
+                        <div
+                            class="w-10 h-10 rounded-full ai-gradient flex items-center justify-center mr-4 flex-shrink-0">
+                            <i class="fas fa-chart-line text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-teal-300">Pattern Recognition</h3>
+                            <p class="text-gray-300">Identifying trends humans might miss</p>
+                        </div>
+                    </div>
+                    <div class="strength-item flex items-start">
+                        <div
+                            class="w-10 h-10 rounded-full ai-gradient flex items-center justify-center mr-4 flex-shrink-0">
+                            <i class="fas fa-sync text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-teal-300">Consistency</h3>
+                            <p class="text-gray-300">Maintaining performance without fatigue</p>
+                        </div>
+                    </div>
+                    <div class="strength-item flex items-start">
+                        <div
+                            class="w-10 h-10 rounded-full ai-gradient flex items-center justify-center mr-4 flex-shrink-0">
+                            <i class="fas fa-calculator text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-teal-300">Precision</h3>
+                            <p class="text-gray-300">Optimizing to multiple decimal places</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Human Strengths Column -->
+            <div class="w-1/2 bg-gray-800 bg-opacity-70 rounded-xl p-6 border-t-4 border-yellow-500">
+                <h2 class="text-2xl font-bold mb-4 flex items-center">
+                    <i class="fas fa-user text-yellow-500 mr-3"></i>
+                    Where Humans Excel
+                </h2>
+                <div class="space-y-4">
+                    <div class="strength-item flex items-start">
+                        <div
+                            class="w-10 h-10 rounded-full human-gradient flex items-center justify-center mr-4 flex-shrink-0">
+                            <i class="fas fa-binoculars text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-yellow-300">Strategic Vision</h3>
+                            <p class="text-gray-300">Understanding business objectives and market context</p>
+                        </div>
+                    </div>
+                    <div class="strength-item flex items-start">
+                        <div
+                            class="w-10 h-10 rounded-full human-gradient flex items-center justify-center mr-4 flex-shrink-0">
+                            <i class="fas fa-lightbulb text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-yellow-300">Creative Thinking</h3>
+                            <p class="text-gray-300">Developing breakthrough campaign concepts</p>
+                        </div>
+                    </div>
+                    <div class="strength-item flex items-start">
+                        <div
+                            class="w-10 h-10 rounded-full human-gradient flex items-center justify-center mr-4 flex-shrink-0">
+                            <i class="fas fa-users text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-yellow-300">Stakeholder Management</h3>
+                            <p class="text-gray-300">Navigating organizational dynamics</p>
+                        </div>
+                    </div>
+                    <div class="strength-item flex items-start">
+                        <div
+                            class="w-10 h-10 rounded-full human-gradient flex items-center justify-center mr-4 flex-shrink-0">
+                            <i class="fas fa-balance-scale text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-yellow-300">Ethical Judgment</h3>
+                            <p class="text-gray-300">Making values-based decisions</p>
+                        </div>
+                    </div>
+                    <div class="strength-item flex items-start">
+                        <div
+                            class="w-10 h-10 rounded-full human-gradient flex items-center justify-center mr-4 flex-shrink-0">
+                            <i class="fas fa-book-open text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-yellow-300">Storytelling</h3>
+                            <p class="text-gray-300">Crafting compelling narratives from data</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Amplification Effect -->
+        <div class="relative z-10 px-20 mt-6">
+            <div class="bg-gradient-to-r from-teal-500 to-purple-700 rounded-xl p-4 flex items-center justify-between">
+                <div class="flex items-center">
+                    <div class="w-12 h-12 rounded-full bg-gray-900 flex items-center justify-center mr-4">
+                        <i class="fas fa-plus text-2xl text-yellow-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">The Amplification Effect</h3>
+                </div>
+                <p class="text-lg text-gray-200 max-w-3xl">
+                    By allowing AI to handle the computational heavy lifting, human strategists are freed to concentrate
+                    on higher-level strategic thinking and creative problem-solving, leading to more impactful and
+                    efficient campaigns.
+                </p>
+            </div>
+        </div>
+        <!-- Bottom accent -->
+        <div class="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r from-teal-400 via-purple-700 to-yellow-500">
+        </div>
+    </div>
+
+</body>
+
+</html>

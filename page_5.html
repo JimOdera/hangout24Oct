@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Key Areas of Transformation: Media Mix &amp; Creative</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        .slide {
+            width: 100%;
+            height: 100vh;
+        }
+
+        .circuit-pattern {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.07;
+            z-index: 0;
+        }
+
+        .comparison-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-left: 4px solid;
+            transition: transform 0.3s ease;
+        }
+
+        .comparison-card:hover {
+            transform: translateY(-5px);
+        }
+
+        html {
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slide bg-gradient-to-br from-gray-900 to-gray-800 text-white relative overflow-hidden"
+        style=" overflow: hidden;">
+        <!-- Circuit pattern background -->
+        <div class="circuit-pattern">
+            <svg height="100%" width="100%" xmlns="http://www.w3.org/2000/svg">
+                <pattern height="100" id="circuit" patternUnits="userSpaceOnUse" width="100">
+                    <path d="M10,10 L90,10 M10,50 L90,50 M10,90 L90,90" fill="none" stroke="#40E0D0" stroke-width="1">
+                    </path>
+                    <path d="M10,10 L10,90 M50,10 L50,90 M90,10 L90,90" fill="none" stroke="#40E0D0" stroke-width="1">
+                    </path>
+                    <circle cx="50" cy="50" fill="#FFA500" r="3"></circle>
+                    <circle cx="10" cy="10" fill="#40E0D0" r="3"></circle>
+                    <circle cx="90" cy="10" fill="#40E0D0" r="3"></circle>
+                    <circle cx="10" cy="90" fill="#40E0D0" r="3"></circle>
+                    <circle cx="90" cy="90" fill="#40E0D0" r="3"></circle>
+                </pattern>
+                <rect fill="url(#circuit)" height="100%" width="100%"></rect>
+            </svg>
+        </div>
+        <!-- Header -->
+        <div class="relative z-10 pt-12 px-20">
+            <h1 class="text-4xl font-bold mb-2 text-white">Key Areas of Transformation: Media Mix &amp; Creative</h1>
+            <div class="w-32 h-1 bg-gradient-to-r from-teal-400 to-teal-600 mb-8"></div>
+        </div>
+        <!-- Main Content -->
+        <div class="relative z-10 flex px-20 space-x-6">
+            <!-- Media Mix Optimization Section -->
+            <div class="w-1/2">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 rounded-full bg-teal-500 flex items-center justify-center mr-4">
+                        <i class="fas fa-chart-pie text-2xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-semibold text-teal-400">Media Mix Optimization</h2>
+                </div>
+                <div class="mb-4">
+                    <div class="comparison-card border-teal-400 p-4 mb-4">
+                        <h3 class="text-lg font-medium text-gray-300 mb-2">Traditional Approach</h3>
+                        <ul class="text-gray-200 space-y-1">
+                            <li class="flex items-start">
+                                <i class="fas fa-minus-circle text-red-400 mt-1 mr-2"></i>
+                                <span>Historical performance analysis</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-minus-circle text-red-400 mt-1 mr-2"></i>
+                                <span>Rule-of-thumb budget allocation</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-minus-circle text-red-400 mt-1 mr-2"></i>
+                                <span>Quarterly rebalancing</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="comparison-card border-orange-400 p-4">
+                        <h3 class="text-lg font-medium text-gray-300 mb-2">AI-Amplified Approach</h3>
+                        <ul class="text-gray-200 space-y-1">
+                            <li class="flex items-start">
+                                <i class="fas fa-plus-circle text-green-400 mt-1 mr-2"></i>
+                                <span>Multi-touch attribution modeling</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-plus-circle text-green-400 mt-1 mr-2"></i>
+                                <span>Continuous budget optimization</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-plus-circle text-green-400 mt-1 mr-2"></i>
+                                <span>Thousands of scenario simulations</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="bg-gray-800 bg-opacity-50 p-3 rounded">
+                    <p class="text-sm text-gray-300">
+                        <i class="fas fa-lightbulb text-yellow-400 mr-2"></i>
+                        <span class="font-semibold">Impact:</span> Move from &#34;best guess&#34; to data-driven
+                        allocation with continuous learning loops.
+                    </p>
+                </div>
+            </div>
+            <!-- Creative Performance Prediction Section -->
+            <div class="w-1/2">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 rounded-full bg-purple-600 flex items-center justify-center mr-4">
+                        <i class="fas fa-paint-brush text-2xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-semibold text-purple-400">Creative Performance Prediction</h2>
+                </div>
+                <div class="mb-4">
+                    <div class="comparison-card border-purple-400 p-4 mb-4">
+                        <h3 class="text-lg font-medium text-gray-300 mb-2">Traditional Approach</h3>
+                        <ul class="text-gray-200 space-y-1">
+                            <li class="flex items-start">
+                                <i class="fas fa-minus-circle text-red-400 mt-1 mr-2"></i>
+                                <span>A/B testing 2-3 variants</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-minus-circle text-red-400 mt-1 mr-2"></i>
+                                <span>Wait weeks for statistical significance</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-minus-circle text-red-400 mt-1 mr-2"></i>
+                                <span>Limited personalization</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="comparison-card border-yellow-400 p-4">
+                        <h3 class="text-lg font-medium text-gray-300 mb-2">AI-Amplified Approach</h3>
+                        <ul class="text-gray-200 space-y-1">
+                            <li class="flex items-start">
+                                <i class="fas fa-plus-circle text-green-400 mt-1 mr-2"></i>
+                                <span>Predict performance before launch</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-plus-circle text-green-400 mt-1 mr-2"></i>
+                                <span>Test hundreds of variations simultaneously</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-plus-circle text-green-400 mt-1 mr-2"></i>
+                                <span>Dynamic creative personalization</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="bg-gray-800 bg-opacity-50 p-3 rounded">
+                    <p class="text-sm text-gray-300">
+                        <i class="fas fa-lightbulb text-yellow-400 mr-2"></i>
+                        <span class="font-semibold">Impact:</span> Reduce creative waste and accelerate time-to-insight
+                        from weeks to hours.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- Bottom accent -->
+        <div class="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r from-teal-400 via-purple-700 to-yellow-500">
+        </div>
+    </div>
+
+</body>
+
+</html>

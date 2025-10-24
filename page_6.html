@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Key Areas of Transformation: Analytics &amp; Competitive Intelligence</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        .slide {
+            width: 100%;
+            height: 100vh;
+        }
+
+        .circuit-pattern {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.07;
+            z-index: 0;
+        }
+
+        .comparison-item {
+            transition: all 0.3s ease;
+        }
+
+        .comparison-item:hover {
+            transform: translateX(5px);
+        }
+
+        html {
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slide bg-gradient-to-br from-gray-900 to-gray-800 text-white relative overflow-hidden"
+        style=" overflow: hidden;">
+        <!-- Circuit pattern background -->
+        <div class="circuit-pattern">
+            <svg height="100%" width="100%" xmlns="http://www.w3.org/2000/svg">
+                <pattern height="100" id="circuit" patternUnits="userSpaceOnUse" width="100">
+                    <path d="M10,10 L90,10 M10,50 L90,50 M10,90 L90,90" fill="none" stroke="#40E0D0" stroke-width="1">
+                    </path>
+                    <path d="M10,10 L10,90 M50,10 L50,90 M90,10 L90,90" fill="none" stroke="#40E0D0" stroke-width="1">
+                    </path>
+                    <circle cx="50" cy="50" fill="#FFA500" r="3"></circle>
+                    <circle cx="10" cy="10" fill="#40E0D0" r="3"></circle>
+                    <circle cx="90" cy="10" fill="#40E0D0" r="3"></circle>
+                    <circle cx="10" cy="90" fill="#40E0D0" r="3"></circle>
+                    <circle cx="90" cy="90" fill="#40E0D0" r="3"></circle>
+                </pattern>
+                <rect fill="url(#circuit)" height="100%" width="100%"></rect>
+            </svg>
+        </div>
+        <!-- Header -->
+        <div class="relative z-10 pt-12 px-20">
+            <h1 class="text-4xl font-bold mb-2 text-white">Key Areas of Transformation</h1>
+            <h2 class="text-3xl font-light mb-3 text-teal-400">Analytics &amp; Competitive Intelligence</h2>
+            <div class="w-32 h-1 bg-gradient-to-r from-teal-400 to-teal-600 mb-8"></div>
+        </div>
+        <!-- Main Content - Two Columns -->
+        <div class="relative z-10 flex px-20 gap-10">
+            <!-- Predictive Analytics Column -->
+            <div class="w-1/2 bg-gray-800 bg-opacity-50 rounded-lg p-6 border-l-4 border-teal-400">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 rounded-full bg-teal-500 flex items-center justify-center mr-4">
+                        <i class="fas fa-chart-line text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-teal-400">Predictive Analytics &amp; Forecasting</h3>
+                </div>
+                <div class="space-y-4 mt-6">
+                    <div class="comparison-item flex">
+                        <div class="w-12 flex-shrink-0 flex items-center justify-center">
+                            <i class="fas fa-history text-gray-400"></i>
+                        </div>
+                        <div class="ml-2">
+                            <p class="text-lg font-medium text-gray-300">Traditional:</p>
+                            <p class="text-gray-400">Historical trend extrapolation &amp; manual market analysis</p>
+                        </div>
+                    </div>
+                    <div class="comparison-item flex">
+                        <div class="w-12 flex-shrink-0 flex items-center justify-center">
+                            <i class="fas fa-rocket text-teal-400"></i>
+                        </div>
+                        <div class="ml-2">
+                            <p class="text-lg font-medium text-teal-400">AI-Amplified:</p>
+                            <p class="text-gray-300">Multi-variable predictive modeling &amp; real-time market signal
+                                detection</p>
+                        </div>
+                    </div>
+                    <div class="comparison-item flex">
+                        <div class="w-12 flex-shrink-0 flex items-center justify-center">
+                            <i class="fas fa-exchange-alt text-gray-400"></i>
+                        </div>
+                        <div class="ml-2">
+                            <p class="text-lg font-medium text-gray-300">Traditional:</p>
+                            <p class="text-gray-400">Reactive campaign adjustments &amp; limited forward visibility</p>
+                        </div>
+                    </div>
+                    <div class="comparison-item flex">
+                        <div class="w-12 flex-shrink-0 flex items-center justify-center">
+                            <i class="fas fa-lightbulb text-teal-400"></i>
+                        </div>
+                        <div class="ml-2">
+                            <p class="text-lg font-medium text-teal-400">AI-Amplified:</p>
+                            <p class="text-gray-300">Proactive opportunity identification &amp; scenario planning at
+                                scale</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Competitive Intelligence Column -->
+            <div class="w-1/2 bg-gray-800 bg-opacity-50 rounded-lg p-6 border-l-4 border-yellow-500">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 rounded-full bg-yellow-500 flex items-center justify-center mr-4">
+                        <i class="fas fa-search text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-yellow-400">Competitive Intelligence</h3>
+                </div>
+                <div class="space-y-4 mt-6">
+                    <div class="comparison-item flex">
+                        <div class="w-12 flex-shrink-0 flex items-center justify-center">
+                            <i class="fas fa-user-clock text-gray-400"></i>
+                        </div>
+                        <div class="ml-2">
+                            <p class="text-lg font-medium text-gray-300">Traditional:</p>
+                            <p class="text-gray-400">Manual competitor monitoring &amp; quarterly competitive audits</p>
+                        </div>
+                    </div>
+                    <div class="comparison-item flex">
+                        <div class="w-12 flex-shrink-0 flex items-center justify-center">
+                            <i class="fas fa-robot text-yellow-400"></i>
+                        </div>
+                        <div class="ml-2">
+                            <p class="text-lg font-medium text-yellow-400">AI-Amplified:</p>
+                            <p class="text-gray-300">Automated competitive tracking across channels &amp; real-time
+                                spend detection</p>
+                        </div>
+                    </div>
+                    <div class="comparison-item flex">
+                        <div class="w-12 flex-shrink-0 flex items-center justify-center">
+                            <i class="fas fa-bullhorn text-gray-400"></i>
+                        </div>
+                        <div class="ml-2">
+                            <p class="text-lg font-medium text-gray-300">Traditional:</p>
+                            <p class="text-gray-400">Limited spend visibility &amp; delayed insights</p>
+                        </div>
+                    </div>
+                    <div class="comparison-item flex">
+                        <div class="w-12 flex-shrink-0 flex items-center justify-center">
+                            <i class="fas fa-chess text-yellow-400"></i>
+                        </div>
+                        <div class="ml-2">
+                            <p class="text-lg font-medium text-yellow-400">AI-Amplified:</p>
+                            <p class="text-gray-300">Share-of-voice monitoring &amp; predictive competitive move
+                                analysis</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Bottom accent -->
+        <div class="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r from-teal-400 via-purple-700 to-yellow-500">
+        </div>
+    </div>
+
+</body>
+
+</html>
